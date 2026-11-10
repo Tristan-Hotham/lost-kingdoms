@@ -1,0 +1,117 @@
+<!-- wp:paragraph -->
+<p><em>Wessex, Mercia and Northumbria vanished more than a thousand years ago, but their names are still on shop signs, pubs and police stations. I read every one I could find on the map to see whether the names still live where the kingdoms were. Mostly, they do.</em></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:buttons -->
+<div class="wp-block-buttons"><!-- wp:button -->
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="https://maps.tristanhotham.com/lost-kingdoms/">Explore the interactive version</a></div>
+<!-- /wp:button -->
+<!-- wp:button -->
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="https://doi.org/10.5281/zenodo.24104340">Read the paper</a></div>
+<!-- /wp:button --></div>
+<!-- /wp:buttons -->
+
+<!-- wp:paragraph -->
+<p>Britain is littered with the names of dead kingdoms. There is a West Mercia Police and a Northumbria Police, a Wessex Water, a Mercian Regiment, a Northumbria University. Further down the high street there are Wessex garages, Mercian carpet shops, Northumbrian butchers, an Elmet fish and chip shop near Selby and a Rheged visitor centre near Penrith. I started to wonder whether they still say anything about where you are. Thomas Hardy borrowed "Wessex" from the history books for his novels, and names like that can float free and end up anywhere. Or do they stay at home?</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>To find out I went through OpenStreetMap, the volunteer-built map of the world, and pulled out every feature in the UK whose name contains one of twelve early medieval kingdoms: Wessex, Mercia, Northumbria, Elmet, Rheged, Deira, Bernicia, Lindsey, Strathclyde, Dalriada, Dumnonia and East Anglia. Then I read them, all of them. Plenty were not what they seemed. "Commercial Road" contains "Mercia", "Madeira" contains "Deira", and Lindsey is also a first name and a village in Suffolk. I ended up with {{flow.private|int}} businesses, clubs, societies and charities, {{flow.public|int}} public bodies and {{flow.street|int}} streets.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Wessex stays in Wessex</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Nobody knows exactly where the borders of these kingdoms ran, so I drew rough outlines of each one around the year 800 out of modern counties and districts, following the standard historical atlases, and fixed them before looking at where any name was. Then I simply counted.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Of {{names.Wessex.private.n|int}} Wessex businesses, clubs and societies, {{names.Wessex.private.n_in|int}} are inside Wessex. That is {{names.Wessex.private.share_in|f0}}%, in an area where only {{names.Wessex.private.base_share|f0}}% of the UK's people live. Per resident, there are {{names.Wessex.private.rr|f0}} times as many Wessex businesses inside the old kingdom as outside it.</p>
+<!-- /wp:paragraph -->
+
+{{IMG|b_map.png|Map of the UK with rough outlines of early medieval kingdoms and coloured dots for every business named after them: each colour sits inside its own outline|Every business, club and society named after an early medieval kingdom, over rough outlines of the kingdoms around AD 800.}}
+
+<!-- wp:paragraph -->
+<p>Mercia and Northumbria are even tighter. {{names.Mercia.private.n_in|int}} of {{names.Mercia.private.n|int}} Mercia businesses are in Mercia. All {{names.Northumbria.private.n|int}} Northumbria businesses are in Northumbria, and every one of them is in the North East, the part of the old kingdom where the police force, the water company and the university now carry the name. There is not a single Northumbria shop in Yorkshire, even though York was one of the kingdom's great centres.</p>
+<!-- /wp:paragraph -->
+
+{{IMG|b_share.png|Chart comparing, for each kingdom name, the share of its businesses inside the kingdom with the share of UK residents living there: the business shares are far higher for every name except Dalriada and Dumnonia, which has a single feature|For each name, the share of its businesses inside the kingdom (dot) against the share of the UK's residents who live there (bar).}}
+
+<!-- wp:pullquote -->
+<figure class="wp-block-pullquote"><blockquote><p>A name more than a thousand years old still, mostly, stays inside its old kingdom.</p></blockquote></figure>
+<!-- /wp:pullquote -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">The ones that got away</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>The {{wessex_out.n|int}} Wessex names outside Wessex are the fun part. {{wessex_out.within25|int}} of them are within 25 km of the edge. {{wessex_out.bristol|int}} are in Bristol, just over the Avon, which I had left out of Wessex because the river was the old frontier. {{wessex_out.wales|int}} are branches of one car dealer across the Severn in Cardiff and Newport. The furthest is in Oldham. Mercia's two strays are a garage in Stockport, a few kilometres over the line, and a firm in County Durham.</p>
+<!-- /wp:paragraph -->
+
+{{IMG|b_wessex.png|Map of southern England with Wessex shaded: red dots for Wessex businesses fill it, with a few open rings just outside in Bristol, Cardiff and Newport|Wessex businesses inside (filled) and outside (rings) the old kingdom.}}
+
+<!-- wp:paragraph -->
+<p>The small kingdoms have too few names to test, but they tell a story. All {{names.Elmet.private.n|int}} Elmet businesses are around Leeds and Selby, though {{place_derived_by_name.Elmet|int}} of them get the name from Sherburn in Elmet, Barwick in Elmet or Elmete in Leeds rather than straight from the kingdom. Elmet has survived on the high street because it survived in place names. Rheged has just {{names.Rheged.private.n|int}}, both at the Rheged centre near Penrith. Dalriada is the one wanderer: {{names.Dalriada.private.n_in|int}} of {{names.Dalriada.private.n|int}} inside, with the rest in the Highlands, Aberdeen and Birmingham.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Shops stay home, streets wander</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>I expected public bodies, which serve a fixed patch, to be more local than shops. They are not, or not in a way the data can see: {{H3.share_public|f0}}% of public bodies and {{H3.share_private|f0}}% of businesses are inside their kingdom. Streets are another matter. Only {{streets.share_in|f0}}% of streets with a kingdom name are inside the kingdom. A Wessex Close or a Mercia Drive is usually picked by a developer from a list of grand-sounding names, and it costs nothing to put one in the wrong place. A Wessex Garage in the wrong place would tell its customers little about where it is.</p>
+<!-- /wp:paragraph -->
+
+{{IMG|b_types.png|Bar chart for Wessex, Mercia and Northumbria: businesses and public bodies are mostly inside their kingdom, streets much less so|Share inside the kingdom by kind of name.}}
+
+{{IMG|b_bands.png|Bar chart of kingdom-named businesses per million residents: about four inside the kingdom, about half a business just outside, and almost none further away|Kingdom-named businesses per million residents, by distance from the kingdom.}}
+
+<!-- wp:paragraph -->
+<p>That chart is the one I find most striking. Inside the kingdoms there are about {{H2.bands.0.rate|f0}} kingdom-named businesses for every million people. In the first 25 km outside there are {{H2.bands.1.rate|f1}}. After that, almost none. The names do not fade out gently with distance. Most of them stop at the border.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">How I did this</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>The names come from OpenStreetMap through the QLever search engine. I matched each kingdom as a whole word, read every match, and sorted them into businesses and voluntary bodies, public bodies, streets and everything else (bus stops, railway lines, substations, signs). Names that come from a street, like a surgery on Wessex Road, are left out. The kingdom outlines are unions of modern areas, in three versions: a heartland, the main extent around 800, and the widest the kingdom might have been. The comparison is with where people live, from the 2021 and 2022 censuses. I wrote the plan down before checking any name against any outline, and the result holds in all {{robust_range.n_checks|int}} checks I planned, including wider and narrower kingdoms, leaving out each region in turn, and counting each chain only once. As a placebo I measured each name against the wrong kingdoms, and found no concentration at all.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>There are limits. OpenStreetMap does not list every business, and the kingdoms had no fixed borders, so my outlines are rough. I cannot date the names, so I cannot tell whether a Wessex shop was named before or after Hardy, or whether Mercia names followed the police force. And Northumbria's names sit only in the North East, not across the whole old kingdom, which suggests that what has survived is the modern region that borrowed the old name. Either way, the names have come home.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:buttons -->
+<div class="wp-block-buttons"><!-- wp:button -->
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="https://maps.tristanhotham.com/lost-kingdoms/">Explore the interactive version</a></div>
+<!-- /wp:button -->
+<!-- wp:button -->
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="https://doi.org/10.5281/zenodo.24104340">Read the paper</a></div>
+<!-- /wp:button -->
+<!-- wp:button -->
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="https://github.com/Tristan-Hotham/lost-kingdoms">Data and code</a></div>
+<!-- /wp:button --></div>
+<!-- /wp:buttons -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Notes and sources</h3>
+<!-- /wp:heading -->
+
+<!-- wp:list -->
+<ul class="wp-block-list"><!-- wp:list-item -->
+<li>Names: OpenStreetMap contributors, via the QLever SPARQL engine, retrieved 2026. Open Database Licence 1.0.</li>
+<!-- /wp:list-item -->
+<!-- wp:list-item -->
+<li>Residents: Census 2021 (ONS and NISRA) and Scotland's Census 2022 (NRS); boundaries from ONS. Open Government Licence v3.0.</li>
+<!-- /wp:list-item -->
+<!-- wp:list-item -->
+<li>Kingdom outlines after D. Hill, An Atlas of Anglo-Saxon England (1981) and B. Yorke, Kings and Kingdoms of Early Anglo-Saxon England (1990). Further reading: D. Rollason, Northumbria, 500 to 1100 (2003); M. Brown and C. Farr (eds), Mercia (2001); S. Gatrell, Thomas Hardy's Vision of Wessex (2003); T. Hughes and F. Godwin, Remains of Elmet (1979).</li>
+<!-- /wp:list-item -->
+<!-- wp:list-item -->
+<li>{{AI}}</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->

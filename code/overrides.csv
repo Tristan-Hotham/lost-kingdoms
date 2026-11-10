@@ -1,0 +1,37 @@
+# Hand decisions after reading every matched feature by eye. pattern = Python regex on the lower-case name (full match);
+# kingdom = name group or *; cls = new class (blank keeps the rule-based class); flag: P = place-derived, A = ambiguous
+# (could be a personal name), N = not the kingdom name at all (class set to OTHER).
+pattern,kingdom,cls,sub,flag,note
+mercia beauty and training academy,Mercia,PRIVATE,beauty salon,,shop=beauty: a private training salon
+mercia lodge,Mercia,SITE,student housing block,,
+mercia seabroke bird hide,Mercia,OTHER,bird hide,,
+mercian corporals mess,Mercia,PUBLIC,military,,Army mess
+mercian recreation ground,Mercia,OTHER,open space,,
+mercia forest crematorium and memorial gardens,Mercia,SITE,crematorium,,
+the northumbria,Northumbria,SITE,named building,,
+northumbrian? water hide,Northumbria,OTHER,bird hide,,Kielder Water bird hides
+wessex vale crematorium,Wessex,PUBLIC,council crematorium,,joint council crematorium
+wessex downs golf course,Wessex,PRIVATE,golf course,,
+aviation medicals wessex,Wessex,PRIVATE,private medical,,
+salisbury share.*wessex community action.*,Wessex,PRIVATE,charity,,
+rheged,Rheged,PRIVATE,visitor centre,,the Rheged centre near Penrith
+centre academy east anglia,East Anglia,PRIVATE,independent school,,
+anglian region theatre school.*,*,PRIVATE,private school,,
+mid anglia school of flying,*,PRIVATE,flying school,,
+environment agency \(anglian region\),*,PUBLIC,public body,,
+greater anglia ticket office,*,PUBLIC,rail operator,,
+11 strathclyde,Strathclyde,OTHER,route,,
+st georgery.*,*,OTHER,artwork,,
+dalriada. a landscape carved by time,Dalriada,OTHER,sign,,
+dalriada,Dalriada,SITE,named building,,
+(sherburn.in.elmet|barwick in elmet|kirton (in )?lindsey|norton lindsey|lindsey|east lindsey|west lindsey),*,OTHER,place name,,settlement or district node
+(snitterfield road norton lindsey|chadsmoor.*|anglia parkway south|anglian way|curlieu lane norton lindsey),*,OTHER,street or place,,
+anglia ruskin,*,PUBLIC,university,,
+anglian,*,SITE,named building,,
+the new dhanak deira,Deira,OTHER,not the kingdom,N,Deira is a district of Dubai
+(cunningham lindsey|flowers by lindsey|jati . corido . lindsey|lindsey and johnson optician|taylor lindsey|bridge & lindsey),Lindsey,OTHER,personal or other name,N,
+(lindsey cafe bar|lindsey hall care home|lindsey house|lindsey building|lindsey centre|lindsey relay co \(euronics\)|the lindsey rose|lindsey castle|lindsey court),Lindsey,,,A,could be a personal name
+doubletree by hilton glasgow strathclyde,Strathclyde,PRIVATE,hotel,P,named after the Strathclyde business park area
+.*(/| - |\. | at ).*(road|lane|drive|way|close|gardens|avenue)$,*,OTHER,transport stop,,stop named after two streets
+forest of mercia way,Mercia,OTHER,path or track,,
+(lindsey marsh drainage board.*|north east lindsey internal drainage board|west lindsey leisure centre),Lindsey,PUBLIC,public body,P,drainage boards are statutory; leisure centre is the council's

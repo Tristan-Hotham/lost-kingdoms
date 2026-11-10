@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Lost kingdoms on the high street | Wessex, Mercia, Elmet and Rheged in business names</title>
+<meta name="description" content="Do businesses named after Wessex, Mercia, Northumbria, Elmet or Rheged sit inside the old kingdoms? 75 of 95 Wessex businesses, clubs and societies in OpenStreetMap are inside Wessex.">
+<meta property="og:title" content="Lost kingdoms on the high street">
+<meta property="og:description" content="75 of 95 Wessex businesses are in Wessex, home to 10% of UK residents. All 33 Northumbria businesses are in Northumbria.">
+<meta property="og:image" content="https://maps.tristanhotham.com/lost-kingdoms/header.png">
+<meta property="og:url" content="https://maps.tristanhotham.com/lost-kingdoms/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800;9..144,900&family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/maplibre-gl@4.7.1/dist/maplibre-gl.css">
+<style>
+:root{--bg:#F6EED8;--panel:#EFE3C4;--fg:#2B2119;--muted:#6E604E;--rule:#E2D3AE;--card:#FBF5E4;--border:#D3C29A;--hot:#B4442E;--cool:#2F6A9E;
+  --display:"Fraunces",Georgia,serif;--body:"Source Serif 4",Georgia,serif;--mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1A1612;--panel:#241E18;--fg:#EFE6D4;--muted:#ADA08B;--rule:#3A3128;--card:#211B15;--border:#4D4234;--hot:#E07A6C;--cool:#8FB4DA;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#1A1612;--panel:#241E18;--fg:#EFE6D4;--muted:#ADA08B;--rule:#3A3128;--card:#211B15;--border:#4D4234;--hot:#E07A6C;--cool:#8FB4DA;color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font:400 18px/1.62 var(--body);padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));overflow-x:hidden}
+.wrap{max-width:720px;margin:0 auto;padding-block:28px 64px}
+a{color:inherit;text-decoration-color:var(--hot);text-underline-offset:3px}
+.kicker{font:500 12px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.kicker b{background:var(--hot);color:#fff;padding:5px 8px;font-weight:500}
+h2{font:800 34px/1.04 var(--display);letter-spacing:-.01em;margin:54px 0 10px;text-wrap:balance}
+h2 .n{font:500 13px/1 var(--mono);color:var(--hot);display:block;letter-spacing:.1em;margin-bottom:10px}
+p{margin:0 0 16px}
+.byline{font:400 13px/1.4 var(--mono);color:var(--muted);margin-top:14px}
+.src{font:400 12px/1.45 var(--mono);color:var(--muted);margin-top:10px}
+ul.plain{padding-left:20px} ul.plain li{margin:4px 0}
+details{border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:10px 0;margin:18px 0;font-size:16px}
+summary{font:500 13px/1.4 var(--mono);letter-spacing:.06em;text-transform:uppercase;cursor:pointer;color:var(--muted)}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin:30px 0 0}
+.cta a{font:500 13px/1 var(--mono);text-decoration:none;border:1px solid var(--fg);padding:11px 14px;border-radius:3px}
+.cta a.p{background:var(--hot);border-color:var(--hot);color:#fff}
+footer{border-top:6px double var(--fg);margin-top:56px;padding-top:16px;font:400 13px/1.55 var(--mono);color:var(--muted)}
+footer p{margin:0 0 10px}
+.theme{font:500 12px/1 var(--mono);background:var(--card);color:var(--fg);border:1px solid var(--border);border-radius:3px;padding:4px 8px;cursor:pointer;min-height:28px}
+.figure{margin:22px 0}.figure img{width:100%;display:block;border:1px solid var(--border);background:#F6EED8}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin:22px 0}
+.stat b{display:block;font:900 40px/1 var(--display);color:var(--hot)}
+.stat span{font:400 13px/1.35 var(--mono);color:var(--muted)}
+table.t{width:100%;border-collapse:collapse;font:400 13.5px/1.4 var(--mono);margin:12px 0 4px}
+table.t th{text-align:left;font-weight:500;border-bottom:2px solid var(--fg);padding:5px 6px 5px 0}
+table.t td{border-bottom:1px solid var(--rule);padding:5px 6px 5px 0;vertical-align:top}
+table.t td.r,table.t th.r{text-align:right}
+.tscroll{overflow-x:auto}
+.topbar{height:40px;display:flex;align-items:center;gap:14px;margin:0 calc(-1 * max(16px,env(safe-area-inset-left,0px)));padding:0 max(14px,env(safe-area-inset-left,0px));border-bottom:3px double var(--fg);background:var(--bg);overflow:hidden;white-space:nowrap}
+.tb-name{font:800 18px/1 var(--display);color:var(--hot);text-decoration:none}
+.tb-k{font:500 11px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.tb-links{margin-left:auto;display:flex;gap:16px;align-items:center;font:500 12px/1 var(--mono)}
+.tb-links a{text-decoration:none}
+.mapband{width:100vw;margin-left:calc(50% - 50vw)}
+.pane{position:relative;height:calc(100vh - 43px);height:calc(100svh - 43px);min-height:480px;border-bottom:1px solid #BCA676;background:#EEF1F2;overflow:hidden}
+#map{position:absolute;inset:0}
+.cartouche{position:absolute;left:14px;top:14px;z-index:5;max-width:min(340px,calc(100% - 28px));background:rgba(251,243,220,.96);color:#2B2119;border:2px solid #2B2119;padding:10px 14px;box-shadow:0 3px 14px rgba(60,40,10,.22)}
+.cartouche h1{font:900 clamp(22px,2.3vw,30px)/1 var(--display);letter-spacing:-.015em;margin:6px 0 0;color:#2B2119}
+.cartouche h1 .a{color:#B4442E}
+.cartouche .dek{font-size:13.5px;line-height:1.36;margin:6px 0 0}
+.cartouche .byline{font-size:11px;color:#6E604E;margin-top:6px}.cartouche .kicker{color:#6E604E}
+.ct-fold{position:absolute;right:6px;top:5px;width:26px;height:26px;border:0;background:none;color:#B4442E;font:700 16px/1 var(--mono);cursor:pointer;padding:0}
+.ct-toggle{display:none;font:800 16px/1 var(--display);color:#B4442E;background:none;border:0;padding:2px 0;cursor:pointer;min-height:30px}
+.cartouche.folded .ct-body,.cartouche.folded .ct-fold{display:none}.cartouche.folded .ct-toggle{display:block}.cartouche.folded{padding:4px 11px}
+.ov-top{position:absolute;z-index:6;right:54px;top:10px;max-width:calc(100% - 480px);display:flex;flex-direction:column;gap:6px;align-items:flex-end;pointer-events:none;font:400 13px/1.3 var(--mono);color:#2B2119}
+.ov-top>*{pointer-events:auto}
+.srch{position:relative;width:min(340px,100%)}
+.srch input{width:100%;font:400 15px/1 var(--mono);background:rgba(251,245,228,.97);color:#2B2119;border:1px solid #9C8656;border-radius:3px;padding:9px 10px;min-height:40px}
+.sug{position:absolute;left:0;right:0;top:100%;margin:2px 0 0;padding:0;list-style:none;background:#FBF5E4;border:1px solid #9C8656;max-height:300px;overflow:auto;display:none;z-index:12}
+.sug li{padding:8px 10px;cursor:pointer;border-bottom:1px solid #E7D9B6}.sug li span{color:#7A6A52;font-size:12px}
+.sug li[aria-selected="true"],.sug li:hover{background:#EFE1BC}
+.chips{display:flex;gap:6px;overflow-x:auto;max-width:100%;scrollbar-width:none;padding-bottom:2px}.chips::-webkit-scrollbar{display:none}
+.chip{flex:0 0 auto;font:500 12px/1 var(--mono);background:rgba(251,245,228,.95);color:#2B2119;border:1px solid #9C8656;border-radius:999px;padding:8px 11px;cursor:pointer;min-height:34px;white-space:nowrap}
+.chip[aria-pressed="true"]{background:#B4442E;color:#fff;border-color:#2B2119}
+.chip.lyr{background:#2B2119;color:#F6EED8;border-color:#2B2119}
+.lp{position:absolute;right:54px;top:60px;z-index:9;background:rgba(251,245,228,.98);border:1px solid #9C8656;border-radius:4px;padding:10px 12px 8px;font:400 13px/1.3 var(--mono);color:#2B2119;box-shadow:0 3px 12px rgba(60,40,10,.25);display:none;min-width:250px}
+.lp.open{display:block}.lp h4{margin:0 0 6px;font:500 11px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:#7A6A52}
+.lp label{display:flex;gap:8px;align-items:center;padding:5px 0;cursor:pointer;min-height:30px}.lp input{accent-color:#B4442E;width:16px;height:16px;flex:none}
+.keys{position:absolute;left:12px;bottom:12px;z-index:4;background:rgba(251,243,220,.96);border:1px solid #9C8656;border-radius:3px;padding:8px 10px;font:400 11.5px/1.25 var(--mono);color:#2B2119;max-width:270px}
+.keys b{display:block;font:800 14px/1.1 var(--display);margin-bottom:5px}
+.keys .bar{height:10px;border:1px solid rgba(43,33,25,.4)}
+.keys .ends{display:flex;justify-content:space-between;font-size:10.5px;color:#6E604E;margin-top:2px}
+.keys .row{display:flex;align-items:center;gap:6px;margin-top:5px}.keys .dot{width:10px;height:10px;border-radius:50%;background:#B9B4AA;border:1px solid #fff;box-shadow:0 0 0 1px #888}
+.maplibregl-popup-content{background:#FBF5E4;color:#2B2119;font:400 13px/1.45 var(--mono);border:1px solid #9C8656;border-radius:4px;padding:10px 12px;max-width:320px;max-height:44vh;overflow:auto}
+.maplibregl-popup-content b.t{display:block;font:800 19px/1.15 var(--display);color:#B4442E;margin-bottom:3px;padding-right:14px}
+.maplibregl-popup-content table{border-collapse:collapse;margin:5px 0}.maplibregl-popup-content td{padding:1px 8px 1px 0;vertical-align:top}
+.maplibregl-popup-content td:first-child{color:#7A6A52}.maplibregl-popup-content .nt{color:#7A6A52;font-size:11.5px;margin:5px 0 0}
+.maplibregl-popup-content a{color:#B4442E}
+.maplibregl-ctrl-attrib{font:400 11px/1.3 var(--mono)!important}
+.nojs{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font:400 14px var(--mono);color:#6E604E;padding:20px;text-align:center}
+@media (max-width:1000px){.ov-top{left:10px;right:54px;max-width:none;align-items:flex-start}.lp{left:10px;right:auto;top:100px}.cartouche{top:100px}}
+@media (max-width:600px){.tb-k,.tb-links a.x{display:none}.topbar{gap:10px}.tb-name{font-size:15px}.tb-links{gap:10px}
+  .lp{left:8px;right:8px;min-width:0}.ov-top{left:8px;top:8px}.cartouche{left:8px;top:100px;max-width:calc(100% - 16px)}.cartouche h1{font-size:23px}
+  .ct-toggle{display:block}.ct-fold{display:none}.keys{max-width:200px;font-size:10.5px;padding:6px 8px}.chip{padding:8px 8px;font-size:11.5px}.keys .kx{display:none}.chips{flex-wrap:wrap}.cartouche{top:150px}}
+.maplibregl-popup{z-index:7}
+.tl{position:absolute;left:12px;right:60px;bottom:12px;z-index:5;display:flex;align-items:center;gap:10px;background:rgba(251,243,220,.96);border:1px solid #9C8656;border-radius:3px;padding:6px 10px;font:400 12px/1.2 var(--mono);color:#2B2119;max-width:560px}
+.tl input[type=range]{flex:1;accent-color:#B4442E;min-width:80px}
+.tl b{font:800 15px/1 var(--display);min-width:92px;text-align:center}
+.tl button{font:500 12px/1 var(--mono);background:#2B2119;color:#F6EED8;border:0;border-radius:3px;padding:7px 9px;cursor:pointer;min-height:30px}
+.keys{bottom:64px}
+.spark{display:block;margin:6px 0 2px}
+.maplibregl-popup-content .pl{border-top:1px solid #E2D3AE;margin-top:6px;padding-top:6px}
+@media (max-width:600px){.tl{left:8px;right:52px;bottom:8px;gap:6px;padding:5px 7px}.tl b{min-width:70px;font-size:13px}.keys{bottom:56px}}
+
+.keys .sw{width:11px;height:11px;border-radius:50%;border:1.5px solid #fff;box-shadow:0 0 0 1px rgba(0,0,0,.25);flex:none}
+.keys .ring{width:11px;height:11px;border-radius:50%;background:#fff;flex:none}
+.keys .grid{display:grid;grid-template-columns:1fr 1fr;gap:2px 10px}
+.lp h4.sub{margin-top:8px}
+.keys{bottom:12px}@media (max-width:600px){.keys{bottom:8px;max-width:250px;font-size:10px}.keys .grid{grid-template-columns:repeat(3,auto);gap:1px 6px}.keys b{font-size:12px}.chips{flex-wrap:nowrap!important;max-width:calc(100vw - 70px)}.cartouche{top:104px!important}}
+</style></head>
+<body>
+<div class="topbar">
+  <a class="tb-name" href="#mapWrap">Lost kingdoms on the high street</a>
+  <span class="tb-k">Data study · 2026</span>
+  <nav class="tb-links"><a href="#essay">About</a><button class="theme" id="theme" aria-label="Toggle dark mode">◐</button><a href="https://doi.org/10.5281/zenodo.24104340">Paper</a><a class="x" href="https://github.com/Tristan-Hotham/lost-kingdoms">Data and code</a></nav>
+</div>
+<div class="mapband">
+  <div class="pane" id="mapWrap" data-fullscreen-map role="application" aria-label="Map of businesses, public bodies and streets named after early medieval kingdoms, over the kingdoms' approximate extents">
+    <div id="map"></div>
+    <div class="nojs" id="nojs">Loading the map. It needs JavaScript and WebGL.</div>
+    <div class="cartouche" id="cartouche">
+      <button class="ct-toggle" id="ctToggle" aria-expanded="true">Lost kingdoms on the high street ▾</button>
+      <button class="ct-fold" id="ctFold" title="Fold the title" aria-label="Fold the title">▴</button>
+      <div class="ct-body">
+        <div class="kicker"><b>Data study</b><span>2026</span></div>
+        <h1>Lost kingdoms on <span class="a">the high street</span></h1>
+        <p class="dek">Every UK business, club, public body and street in OpenStreetMap named after an early medieval kingdom, over the kingdoms' approximate extents around AD 800 (shaded). Filled dots are inside their kingdom, rings outside. Tap a dot.</p>
+        <div class="byline">Dr Tristan Hotham · Independent researcher · 2026</div>
+      </div>
+    </div>
+    <div class="ov-top">
+      <div class="srch"><input type="search" id="q" placeholder="Find a name or a place" aria-label="Find a name or a place" autocomplete="off"><ul class="sug" id="sug" role="listbox"></ul></div>
+      <div class="chips" id="chips"><button class="chip lyr" id="lyrBtn" aria-expanded="false" aria-controls="lp">Layers</button><button class="chip" data-k="-1" aria-pressed="true">All names</button><button class="chip" data-k="0" aria-pressed="false">Wessex</button><button class="chip" data-k="1" aria-pressed="false">Mercia</button><button class="chip" data-k="2" aria-pressed="false">Northumbria</button><button class="chip" data-k="3" aria-pressed="false">Elmet</button><button class="chip" data-k="4" aria-pressed="false">Rheged</button><button class="chip" data-k="7" aria-pressed="false">Lindsey</button><button class="chip" data-k="8" aria-pressed="false">Strathclyde</button><button class="chip" data-k="9" aria-pressed="false">Dalriada</button><button class="chip" data-k="11" aria-pressed="false">East Anglia</button></div>
+    </div>
+    <div class="lp" id="lp" role="dialog" aria-label="Map layers">
+      <h4>Kinds of name</h4>
+      <label><input type="checkbox" id="tyB" checked> Businesses, clubs and societies</label>
+      <label><input type="checkbox" id="tyP" checked> Public bodies</label>
+      <label><input type="checkbox" id="tyS"> Streets</label>
+      <label><input type="checkbox" id="tyX"> Named buildings and sites</label>
+      <h4 class="sub">Kingdom extents</h4>
+      <label><input type="checkbox" id="exM" checked> Approximate extent around AD 800</label>
+      <label><input type="checkbox" id="exW"> Widest plausible extent</label>
+      <label><input type="checkbox" id="exC"> Heartland only</label>
+      <h4 class="sub">Map</h4>
+      <label><input type="checkbox" id="lyL" checked> Names next to dots (close in)</label>
+      <label><input type="checkbox" id="lyB" checked> Base map labels</label>
+    </div>
+    <div class="keys" id="keys"><b>Kingdom name</b><div class="grid" id="keyGrid"></div>
+      <div class="row"><span class="sw" style="background:#6E604E"></span>inside its kingdom</div><div class="row"><span class="ring" style="border:2.5px solid #6E604E"></span>outside</div>
+      <div class="row kx" style="color:#6E604E">Shading: approximate extents, not borders. UK only.</div></div>
+  </div>
+</div>
+<div class="wrap" id="essay">
+<p style="margin-top:6px">Britain is full of kingdoms that vanished more than a thousand years ago. Wessex, Mercia and Northumbria are the better known; Elmet around Leeds, Rheged near the Solway, Lindsey in north Lincolnshire, Strathclyde on the Clyde and Dalriada in Argyll and Antrim are quieter. Their names live on in shop signs, pubs, police forces and street names. I wanted to know whether those names still sit where the kingdoms were, or whether they have wandered. So I took every place in OpenStreetMap whose name contains one of these kingdoms, read each one, and checked it against a rough outline of the kingdom around the year 800.</p>
+<div class="byline">Dr Tristan Hotham · Independent researcher · 2026 · Data: OpenStreetMap contributors (ODbL), census populations from ONS, NRS and NISRA (OGL v3.0) · Base map: OpenFreeMap Positron</div>
+<div class="stats">
+<div class="stat"><b>79%</b><span>of Wessex businesses, clubs and societies are inside Wessex, home to 10% of UK residents</span></div>
+<div class="stat"><b>30 of 32</b><span>Mercia names inside Mercia</span></div>
+<div class="stat"><b>33 of 33</b><span>Northumbria names inside Northumbria: none outside</span></div>
+<div class="stat"><b>44x</b><span>as many kingdom-named businesses per resident inside the kingdom as outside</span></div>
+</div>
+
+<h2><span class="n">01 · The question</span>Do old names stay at home?</h2>
+<p>Names travel. A company founded in Dorset can open a branch in Manchester, a pub can be called anything its owner fancies, and Thomas Hardy borrowed "Wessex" from early English history as the setting of his novels. So it would not be surprising to find kingdom names scattered across the country. On the other hand, a name like Mercia or Northumbria only means something to customers who feel they live there.</p>
+<p>From 7,500 OpenStreetMap features with a county or kingdom word in their name, I kept 1,087 whose name contains a kingdom as a whole word (not "Commercial", which hides "Mercia", or "Madeira", which hides "Deira"). Of these, 254 are businesses, clubs, societies, charities and places of worship, 93 are public bodies such as police forces, schools and councils, and 336 are streets. The rest are bus stops, railway lines, substations and the like. For the early medieval kingdoms (leaving out East Anglia, which is also a modern region) there are 198 businesses and clubs.</p>
+
+<h2><span class="n">02 · Wessex</span>Wessex stays in Wessex, mostly</h2>
+<p>Of 95 Wessex businesses, clubs and societies, 75 are inside the kingdom's approximate extent (Hampshire, the Isle of Wight, Wiltshire, Dorset, Somerset, Berkshire and Devon), where 10% of the UK's residents live. Per resident, that is 34 times as many inside as outside (95% interval 20 to 71). Of the 20 outside, 14 are within 25 km of the edge: 7 in Bristol, just north of the Avon, which I left out of Wessex because the outline takes the Avon as its edge, and 4 car dealers across the Severn in Cardiff and Newport. The furthest is in Oldham.</p>
+<div class="figure"><img src="img/wessex.jpg" alt="Map of the Wessex extent across southern England, shaded red, with red dots for Wessex-named businesses: almost all inside, with open rings just outside in Bristol, Cardiff and Newport" loading="lazy"><p class="src">Wessex businesses, clubs and societies. Filled: inside the approximate extent; rings: outside.</p></div>
+
+<h2><span class="n">03 · Mercia and Northumbria</span>Even tighter</h2>
+<p>Mercia is a big kingdom, covering the Midlands, where 26% of UK residents live, so names there have plenty of room. Even so, 30 of 32 Mercia businesses are inside it. One of the two outside is a garage in Stockport, 4 km over the line. Northumbria is tighter still: all 33 Northumbria businesses, from Northumbrian Heritage Meats to the Northumbrian Piper pub, are inside the old kingdom, all 33 of them in the North East region, where the name was taken up again by the police, a university and the water company.</p>
+<div class="figure"><img src="img/share.jpg" alt="Dot and whisker chart: for every kingdom name, the share of its businesses inside the kingdom is far higher than the share of UK residents living there, except Dalriada and Dumnonia, which have very few cases" loading="lazy"><p class="src">Share inside each extent (dot, 95% interval) against the share of residents (bar).</p></div>
+
+<h2><span class="n">04 · The small kingdoms</span>Elmet, Rheged and the rest</h2>
+<p>The smaller kingdoms have few named places, so the numbers are a description, not a test. All 10 Elmet businesses and clubs are around Leeds and Selby, but 6 of them take it from a place, Sherburn in Elmet, Barwick in Elmet or Elmete in Leeds, rather than from the kingdom directly; the rest include Elmet Fisheries, Elmet Kitchen and the Elmet Social Club. Rheged has just 2 businesses, both at the Rheged centre near Penrith. Lindsey (north Lincolnshire) has 9 of 10 inside, once personal names such as Flowers by Lindsey are set aside. Strathclyde has 8 of 9. Dalriada is the exception: only 2 of 5 inside, with a guesthouse in the Highlands, a sports ground in Aberdeen and a trustee firm's office in Birmingham. East Anglia, which is also a modern region, has 43 of 56 in Norfolk and Suffolk, and all of them within the wider modern region.</p>
+<div class="figure"><img src="img/map.jpg" alt="Map of the UK with approximate kingdom extents shaded and dots for every kingdom-named business, coloured by kingdom: each colour sits inside its own shaded area" loading="lazy"><p class="src">Every kingdom-named business, club and society over the approximate extents.</p></div>
+
+<h2><span class="n">05 · Who names what</span>Shops, public bodies and streets</h2>
+<p>I expected public bodies, which serve a defined patch, to stick to their kingdom more closely than shops. They do not, clearly: for the three names with enough cases, 89% of public bodies and 86% of businesses are inside, a difference the data cannot tell apart from none (odds ratio 0.87, 95% interval 0.29 to 2.60). Streets are different. Only 52% of kingdom-named streets are inside their kingdom. A Wessex Close or Mercia Drive is usually a developer's or council's choice from a list of grand-sounding names, and it travels further than a business sign.</p>
+<div class="figure"><img src="img/types.jpg" alt="Bar chart for Wessex, Mercia and Northumbria: businesses and public bodies are mostly inside their kingdom, streets much less so" loading="lazy"><p class="src">Share inside the extent by kind of name.</p></div>
+<div class="figure"><img src="img/bands.jpg" alt="Bar chart of kingdom-named businesses per million residents: about 4 inside the kingdom, under 0.5 just outside, and almost none further away" loading="lazy"><p class="src">Kingdom-named businesses per million residents, by distance from the extent.</p></div>
+
+<h2><span class="n">06 · Checks</span>It holds every way I looked</h2>
+<p>I wrote the analysis plan down before measuring anything against the kingdom outlines. The headline holds in all 19 planned checks: with wider or narrower kingdoms, counting each chain once, dropping chains, leaving out each English region and each nation in turn, measuring per square kilometre rather than per resident, and adding streets. Against the wrong kingdom's outline, as a placebo, the names show no preference at all (0.97 times, 95% interval 0.51 to 1.83).</p>
+<div class="figure"><img src="img/robust.jpg" alt="Forest plot of every planned check: all estimates are far above 1, between about 15 and 140 times" loading="lazy"><p class="src">Every check: the rate ratio per resident, inside against outside.</p></div>
+
+<h2><span class="n">07 · How I did this</span>Names, outlines and residents</h2>
+<p><b>Names.</b> OpenStreetMap features in the UK whose name contains a county or kingdom word, from the QLever query service. I matched each kingdom as a whole word, with its adjective (Mercian, Northumbrian), and read every match. Bus stops, railway lines, substations, signs and names that come from a street ("Wessex Road Surgery") are left out. Lindsey is also a first name, so personal names are dropped, and so is anything near Lindsey in Suffolk or Norton Lindsey in Warwickshire. A node and a building outline of the same pub count once.</p>
+<p><b>Kingdoms.</b> There are no agreed borders for kingdoms of the 7th to 9th centuries. I drew each as a union of modern areas, following the standard maps (Hill's Atlas of Anglo-Saxon England and Barbara Yorke's work), in three versions: heartland, the main extent around 800, and the widest plausible extent. All three were fixed before any name was checked against them.</p>
+<p><b>Comparison.</b> Residents from the 2021 and 2022 censuses give the baseline: if names ignored the kingdoms, the share inside would match the share of residents inside. Uncertainty is from resampling whole brands, so a chain of charity shops counts as one decision.</p>
+<p><b>What this cannot say.</b> OpenStreetMap does not list every business, and it maps some areas more fully than others. I cannot date the names, so I cannot say which came before or after a revival such as Hardy's. Strathclyde is also a river valley and a former council region; Northumbria and Mercia are the names of modern police forces and water companies, which may have made them local again. The pattern is a description, not a cause.</p>
+<details><summary>Sources and licences</summary>
+<ul class="plain">
+<li>OpenStreetMap contributors, via the QLever SPARQL endpoint (osm-planet), retrieved 2026. Open Database Licence 1.0.</li>
+<li>Census 2021 usual residents by MSOA (Office for National Statistics, via Nomis); Scotland's Census 2022 (National Records of Scotland); Census 2021 (NISRA). Open Government Licence v3.0. Compiled in <i>Faith on the map</i> (Hotham 2026, doi:10.5281/zenodo.23842991).</li>
+<li>Boundaries: ONS MSOA 2021, local authority districts 2023 and counties, Open Government Licence v3.0, contains OS data Crown copyright and database right.</li>
+<li>Kingdom extents: my approximations after Hill (1981) <i>An Atlas of Anglo-Saxon England</i> and Yorke (1990) <i>Kings and Kingdoms of Early Anglo-Saxon England</i>, with the specialist works cited in the paper.</li>
+<li>Base map: OpenFreeMap Positron style (OpenStreetMap, ODbL). MapLibre GL JS 4.7.1 (BSD 3-Clause).</li>
+<li>Text and figures CC BY 4.0; code MIT; derived data from OpenStreetMap ODbL 1.0.</li>
+</ul></details>
+<div class="cta"><a class="p" href="https://doi.org/10.5281/zenodo.24104340">Read the paper</a><a href="https://github.com/Tristan-Hotham/lost-kingdoms">Data and code</a><a href="https://blog.tristanhotham.com/2026/10/31/lost-kingdoms/">Blog post</a></div>
+<footer>
+<p>Dr Tristan Hotham, Independent researcher. ORCID <a href="https://orcid.org/0000-0003-4931-9349">0000-0003-4931-9349</a>.</p>
+<p>Cite as: Hotham, T. (2026) Lost kingdoms on the high street: early medieval kingdom names in modern British business names. Zenodo. <a href="https://doi.org/10.5281/zenodo.24104340">10.5281/zenodo.24104340</a></p>
+<p>Code: <a href="https://github.com/Tristan-Hotham/lost-kingdoms">github.com/Tristan-Hotham/lost-kingdoms</a> (MIT). Text and figures CC BY 4.0. Data derived from OpenStreetMap: ODbL 1.0.</p>
+<p>I wrote the text, with drafting and editing assistance from Claude (Anthropic), which also helped prepare the analysis code. I reviewed and checked all text and results.</p>
+</footer>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
+<script src="js/page.js?v=2026a"></script>
+<!-- map-fullscreen v1 -->
+<style id="mfs-style">
+.mfs-btn{position:absolute;top:10px;right:10px;z-index:1001;width:34px;height:34px;border:2px solid rgba(0,0,0,.25);border-radius:4px;background:#fff;color:#222;cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0;box-shadow:0 1px 4px rgba(0,0,0,.2)}
+.mfs-btn:hover{background:#f2f2f2}
+.mfs-btn svg{width:18px;height:18px}
+.mfs-host.mfs-btn-left .mfs-btn{right:auto;left:54px}
+.mfs-fake{position:fixed!important;inset:0!important;width:100vw!important;height:100vh!important;height:100dvh!important;max-width:none!important;max-height:none!important;margin:0!important;z-index:100000!important;border-radius:0!important}
+html.mfs-lock,html.mfs-lock body{overflow:hidden!important}
+:fullscreen.mfs-host{width:100vw!important;height:100vh!important;max-width:none!important;max-height:none!important;margin:0!important;border-radius:0!important}
+</style>
+<script id="mfs-script">
+(function(){
+  var ICON_OPEN='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg>';
+  var ICON_CLOSE='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M9 4v5H4M15 4v5h5M9 20v-5H4M15 20v-5h5"/></svg>';
+  function poke(){setTimeout(function(){window.dispatchEvent(new Event('resize'));},60);setTimeout(function(){window.dispatchEvent(new Event('resize'));},400);}
+  function realFS(){return document.fullscreenElement||document.webkitFullscreenElement;}
+  function add(el){
+    if(el.__mfs)return; el.__mfs=1;
+    var cs=getComputedStyle(el); if(cs.position==='static')el.style.position='relative';
+    el.classList.add('mfs-host');
+    // avoid clashing with a top-right Leaflet control (e.g. "Map layers")
+    var tr=el.querySelector('.leaflet-top.leaflet-right');
+    if(tr&&tr.children.length){ el.classList.add('mfs-btn-left'); }
+    var b=document.createElement('button'); b.type='button'; b.className='mfs-btn';
+    b.title='Full screen map'; b.setAttribute('aria-label','Full screen map'); b.innerHTML=ICON_OPEN;
+    ['click','dblclick','mousedown','touchstart','wheel'].forEach(function(t){b.addEventListener(t,function(e){e.stopPropagation();},{passive:t!=='click'});});
+    function setIcon(on){b.innerHTML=on?ICON_CLOSE:ICON_OPEN;b.title=on?'Exit full screen':'Full screen map';b.setAttribute('aria-label',b.title);}
+    function exitFake(){el.classList.remove('mfs-fake');document.documentElement.classList.remove('mfs-lock');setIcon(false);poke();}
+    b.addEventListener('click',function(e){
+      e.preventDefault();
+      if(el.classList.contains('mfs-fake')){exitFake();return;}
+      if(realFS()){(document.exitFullscreen||document.webkitExitFullscreen).call(document);return;}
+      var req=el.requestFullscreen||el.webkitRequestFullscreen;
+      if(req){ try{ var p=req.call(el); if(p&&p.catch)p.catch(function(){el.classList.add('mfs-fake');document.documentElement.classList.add('mfs-lock');setIcon(true);poke();}); }catch(err){el.classList.add('mfs-fake');document.documentElement.classList.add('mfs-lock');setIcon(true);poke();} }
+      else { el.classList.add('mfs-fake');document.documentElement.classList.add('mfs-lock');setIcon(true);poke(); }
+    });
+    document.addEventListener('keydown',function(e){if(e.key==='Escape'&&el.classList.contains('mfs-fake'))exitFake();});
+    ['fullscreenchange','webkitfullscreenchange'].forEach(function(t){document.addEventListener(t,function(){setIcon(realFS()===el);poke();});});
+    el.appendChild(b);
+  }
+  function scan(){
+    var els=document.querySelectorAll('[data-fullscreen-map], .leaflet-container, .maplibregl-map, .mapboxgl-map');
+    els.forEach(function(el){
+      if(el.closest('.mfs-host')&&!el.classList.contains('mfs-host'))return;
+      var r=el.getBoundingClientRect(); if(r.width<200||r.height<150)return;
+      add(el);
+    });
+  }
+  function start(){scan(); var n=0; var t=setInterval(function(){scan(); if(++n>20)clearInterval(t);},500);}
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',start); else start();
+})();
+</script>
+<!-- /map-fullscreen -->
+
+<script src="https://maps.tristanhotham.com/assets/site-nav.js" defer></script>
+</body>
+</html>

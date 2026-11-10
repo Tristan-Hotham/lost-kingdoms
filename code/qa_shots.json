@@ -1,0 +1,7 @@
+[
+ {"w": 1280, "h": 900, "out": "qa/desktop.png"},
+ {"w": 1280, "h": 900, "out": "qa/desktop_full.png", "full": true},
+ {"w": 390, "h": 844, "dpr": 2, "out": "qa/phone.png"},
+ {"w": 1280, "h": 900, "out": "qa/wessex_popup.png", "q": "k=0", "eval": "document.getElementById('q').value='Wessex Kia'; document.getElementById('q').dispatchEvent(new Event('input')); document.getElementById('q').dispatchEvent(new KeyboardEvent('keydown',{key:'Enter'}))"},
+ {"w": 390, "h": 844, "dpr": 2, "out": "qa/phone_layers.png", "eval": "document.getElementById('lyrBtn').click(); document.getElementById('tyS').click(); document.getElementById('exW').click()"}
+]
